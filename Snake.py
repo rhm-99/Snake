@@ -22,8 +22,14 @@ snake_speed = 30
 font_style = pygame.font.SysFont(None, 30)
 score_font = pygame.font.SysFont(None, 35)
 
+
+def your_score(score):
+    value = score_font.render("Score: "+str(score), True, white)
+    display.blit(value, [0, 0])
+
+
 def our_snake(snake_block, snake_list):
-    for x int snake_list:
+    for x in snake_list:
         pygame.draw.rect(display, white, [x[0], x[1], snake_block, snake_block])
 
 
@@ -102,7 +108,9 @@ def gameLoop():
         pygame.display.update()
 
         if x1 == foodx and y1 == foody:
-            print("+1!")
+            foodx = round(random.randrange(0, display_width - snake_block) / 10.0) * 10.0
+            foody = round(random.randrange(0, display_width - snake_block) / 10.0) * 10.0
+            length_of_snake += 1
         clock.tick(snake_speed)
 
 
