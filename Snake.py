@@ -1,6 +1,6 @@
 # Learnt from https://www.edureka.co/blog/snake-game-with-pygame/ (may be slightly edited)
 import random
-
+import time
 import pygame
 
 pygame.init()
@@ -14,17 +14,22 @@ display_height = 400
 display = pygame.display.set_mode((display_height, display_width))
 pygame.display.set_caption('Snake by rhm-99')
 
-clock = pygame.time.clock()
+clock = pygame.time.Clock()
 
 snake_block = 10
 snake_speed = 30
 
 font_style = pygame.font.SysFont(None, 30)
+score_font = pygame.font.SysFont(None, 35)
+
+def our_snake(snake_block, snake_list):
+    for x int snake_list:
+        pygame.draw.rect(display, white, [x[0], x[1], snake_block, snake_block])
 
 
 def message(msg, colour):
     mesg = font_style.render(msg, True, colour)
-    display.blit(mesg, [display_width / 3, display_height / 3])
+    display.blit(mesg, [display_width / 6, display_height / 3])
 
 
 def gameLoop():
@@ -36,6 +41,9 @@ def gameLoop():
 
     x1_change = 0
     y1_change = 0
+
+    snake_list = []
+    length_of_snake = 1
 
     foodx = round(random.randrange(0, display_width - snake_block) / 10.0) * 10.0
     foody = round(random.randrange(0, display_width - snake_block) / 10.0) * 10.0
@@ -79,7 +87,18 @@ def gameLoop():
         y1 += y1_change
         display.fill(black)
         pygame.draw.rect(display, white, [foodx, foody, snake_block, snake_block])
-        pygame.draw.rect(display, white, [x1, y1, 10, 10])
+        snake_head = []
+        snake_head.append(x1)
+        snake_head.append(y1)
+        snake_list.append(snake_head)
+        if len(snake_list) > length_of_snake:
+            del snake_list[0]
+
+        for x in snake_list[:-1]:
+            if x == snake_head:
+                game_close = True
+
+        our_snake(snake_block, snake_list)
         pygame.display.update()
 
         if x1 == foodx and y1 == foody:
