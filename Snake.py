@@ -1,31 +1,87 @@
-# Learnt from https://www.edureka.co/blog/snake-game-with-pygame/ (may be slightly edited)
-import random
+# Learnt from https://techwithtim.net/tutorials/game-development-with-python/snake-pygame/tutorial-1/
+# (may be slightly edited)
 import pygame
-import math
-import tkinter as tk
-from tkinter import messagebox
 
 
-class cube(object):
+class Cube(object):
     rows = 20
     w = 400
 
-    def __init__(self, start, dirnx=1, dirny=0, color=(0,0,0)):
-        pass
+    def __init__(self, start, dirnx=1, dirny=0, color=(0, 0, 0)):
+        self.pos = start
+        self.dirnx = 1
+        self.dirny = 0
+        self.color = color
 
     def move(self, dirnx, dirny):
-        pass
+        self.dirnx = dirnx
+        self.dirny = dirny
+        self.pos = (self.pos[0] + self.dirnx, self.pos[1] + self.dirny)
 
     def draw(self, surface, eyes=False):
-        pass
+        dis = self.w // self.rows
+        i = self.pos[0]
+        j = self.pos[1]
+
+        pygame.draw.rect(surface, self.color, (i*dis+1, dis-2, dis-2))
+
+        if eyes:
+            centre = dis//2
+            radius = 3
+            circleMiddle = (i*dis+dis-radius, j*dis+8)
+            circleMiddle2 = (i*dis + dis-radius*2, j*dis+8)
+            pygame.draw.circle(surface, (255, 255, 255), circleMiddle, radius)
+            pygame.draw.circle(surface, (255, 255, 255), circleMiddle2, radius)
 
 
-class snake(object):
+class Snake(object):
+    body = []
+    turns = {}
+
     def __init__(self, color, pos):
-        pass
+        self.color = color
+        self.head = Cube(pos)
+        self.body.append(self.head)
+        self.dirnx = 0
+        self.dirny = 1
 
     def move(self):
-        pass
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+            keys = pygame.key.get_pressed()
+            for key in keys:
+                if keys[pygame.K_LEFT]:
+                    self.dirnx = -1
+                    self.dirny = 0
+                    self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
+                elif key[pygame.K_RIGHT]:
+                    self.dirnx = 1
+                    self.dirny = 0
+                    self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
+                elif key[pygame.K_DOWN]:
+                    self.dirnx = 0
+                    self.dirny = 1
+                    self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
+                elif key[pygame.K_UP]:
+                    self.dirnx = 0
+                    self.dirny = -1
+                    self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
+        for i, c in enumerate(self.body):
+            p = c.pos[:]
+            if p in self.turns:
+                turn = self.turns[p]
+                c.move(turn[0], turn[1])
+                if i == len(self.body)-1:
+                    self.turns.pop(p)
+            else:
+                if c.dirnx == -1 and c.pos[0] <= 0: c.pos = (c.rows-1, c.pos[1])
+                elif c.dirnx == 1 and c.pos[0] >= c.rows-1:
+                    c.pos = (0, c.pos[1])
+                elif c.dirny == 1 and c.pos[1] >= c.rows - 1:
+                    c.pos = (c.pos[0], 0)
+                elif c.dirny == -1 and c.pos[1] <= 0: c.pos = (c.pos[0], c.rows-1)
+                else: c.move(c.dirnx, c.dirny)
 
     def reset(self, pos):
         pass
@@ -34,7 +90,11 @@ class snake(object):
         pass
 
     def draw(self, surface):
-        pass
+        for i, c in enumerate(self.body):
+            if i == 0:
+                c.draw(surface, True)
+            else:
+                c.draw(surface)
 
 
 def drawGrid(w, rows, surface):
@@ -45,11 +105,14 @@ def drawGrid(w, rows, surface):
         x = x + sizeBtwn
         y = y + sizeBtwn
 
-        pygame.draw.line(surface, (255,255,255), (x, 0), (x, w))
+        pygame.draw.line(surface, (255, 255, 255), (x, 0), (x, w))
         pygame.draw.line(surface, (255, 255, 255), (0, y), (w, y))
 
+
 def redrawWindow(surface):
+    global rows, width, s
     surface.fill((0, 0, 0))
+    s.draw(surface)
     drawGrid(surface)
     pygame.display.update()
 
@@ -65,12 +128,12 @@ def message_box(subject, content):
 def main():
     global width, rows, s
     width = 400
-    height =400
+    height = 400
     rows = 20
 
     win = pygame.display.set_mode((width, height))
 
-    s = snake((255, 255, 255), (10, 10))
+    s = Snake((255, 255, 255), (10, 10))
 
     clock = pygame.time.Clock()
 
@@ -79,6 +142,7 @@ def main():
     while flag:
         pygame.time.delay(50)
         clock.tick(10)
+        s.move()
         redrawWindow(win)
 
 
