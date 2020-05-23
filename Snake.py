@@ -1,5 +1,7 @@
 # Learnt from https://techwithtim.net/tutorials/game-development-with-python/snake-pygame/tutorial-1/
 # (may be slightly edited)
+import random
+import snake
 import pygame
 
 
@@ -87,7 +89,20 @@ class Snake(object):
         pass
 
     def addCube(self):
-        pass
+        tail = self.body[-1]
+        dx, dy = tail.dirnx, tail.dirny
+
+        if dx == 1 and dy ==0:
+            self.body.append(cube((tail.pos[0]-1, tail.pos[1])))
+        elif dx == -1 and dy ==0:
+            self.body.append(cube((tail.pos[0]+1, tail.pos[1])))
+        elif dx == 0 and dy == 1:
+            self.body.append(cube((tail.pos[0], tail.pos[1]-1)))
+        elif dx == 0 and dy == -1:
+            self.body.append(cube((tail.pos[0], tail.pos[1]+1)))
+
+        self.body[-1].dirnx = dx
+        self.body[-1].dirn
 
     def draw(self, surface):
         for i, c in enumerate(self.body):
@@ -110,15 +125,25 @@ def drawGrid(w, rows, surface):
 
 
 def redrawWindow(surface):
-    global rows, width, s
+    global rows, width, s, snack
     surface.fill((0, 0, 0))
     s.draw(surface)
-    drawGrid(surface)
+    snack.draw(surface)
+    drawGrid(width, rows, surface)
     pygame.display.update()
 
 
 def randomSnack(rows, item):
-    pass
+    positions = item.body
+    while True:
+        x = random.randrange(rows)
+        y = random.randrange(rows)
+        if len(list(filter(lambda z:z.pos == (x,y), positions))) > 0:
+            continue
+        else:
+            break
+
+    return (x, y)
 
 
 def message_box(subject, content):
@@ -139,11 +164,18 @@ def main():
 
     flag = True
 
+    snack = cube(randomSnack(rows, s), color(0, 255, 0))
+
     while flag:
         pygame.time.delay(50)
         clock.tick(10)
         s.move()
         redrawWindow(win)
+
+    if s.body[0] == snake.pos:
+        s.addCube()
+        snack = cube(randomSnack(rows, s), color = (0, 255, 0))
+
 
 
 main()
