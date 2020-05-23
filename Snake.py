@@ -102,7 +102,7 @@ class Snake(object):
             self.body.append(cube((tail.pos[0], tail.pos[1]+1)))
 
         self.body[-1].dirnx = dx
-        self.body[-1].dirn
+        self.body[-1].dirn = dy
 
     def draw(self, surface):
         for i, c in enumerate(self.body):
@@ -176,6 +176,7 @@ def main():
         s.addCube()
         snack = cube(randomSnack(rows, s), color = (0, 255, 0))
 
+    for x in range()
 
 
 main()

@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbfc43f0-85d6-406b-ab41-c9e7cfa2f82d" name="Default Changelist" comment="new tutorial">
+    <list default="true" id="cbfc43f0-85d6-406b-ab41-c9e7cfa2f82d" name="Default Changelist" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Snake.py" beforeDir="false" afterPath="$PROJECT_DIR$/Snake.py" afterDir="false" />
     </list>
@@ -101,7 +101,7 @@
       <option name="presentableId" value="Default" />
       <updated>1589648655107</updated>
       <workItem from="1589648658490" duration="43843000" />
-      <workItem from="1590179495501" duration="3602000" />
+      <workItem from="1590179495501" duration="5315000" />
     </task>
     <task id="LOCAL-00001" summary="First edit of game">
       <created>1589661364808</created>
@@ -152,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590179709073</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="commit">
+      <created>1590240620173</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1590240620173</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
