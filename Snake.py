@@ -59,17 +59,17 @@ class Snake(object):
                     self.dirny = 0
                     self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
 
-                elif key[pygame.K_RIGHT]:
+                elif keys[pygame.K_RIGHT]:
                     self.dirnx = 1
                     self.dirny = 0
                     self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
 
-                elif key[pygame.K_DOWN]:
+                elif keys[pygame.K_DOWN]:
                     self.dirnx = 0
                     self.dirny = 1
                     self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
 
-                elif key[pygame.K_UP]:
+                elif keys[pygame.K_UP]:
                     self.dirnx = 0
                     self.dirny = -1
                     self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
@@ -101,7 +101,7 @@ class Snake(object):
         self.dirnx = 0
         self.dirny = 1
 
-    def addCube(self):
+    def addcube(self):
         tail = self.body[-1]
         dx, dy = tail.dirnx, tail.dirny
 
@@ -125,24 +125,24 @@ class Snake(object):
                 c.draw(surface)
 
 
-def drawGrid(w, rows, surface):
-    sizeBtwn = width // rows
+def drawgrid(w, rows, surface):
+    sizebtwn = width // rows
     x = 0
     y = 0
     for l in range(rows):
-        x = x + sizeBtwn
-        y = y + sizeBtwn
+        x = x + sizebtwn
+        y = y + sizebtwn
 
         pygame.draw.line(surface, (255, 255, 255), (x, 0), (x, w))
         pygame.draw.line(surface, (255, 255, 255), (0, y), (w, y))
 
 
-def redrawWindow(surface):
+def redrawwindow(surface):
     global rows, width, s, snack
     surface.fill((0, 0, 0))
     s.draw(surface)
     snack.draw(surface)
-    drawGrid(width, rows, surface)
+    drawgrid(width, rows, surface)
     pygame.display.update()
 
 
@@ -187,18 +187,18 @@ def main():
         pygame.time.delay(50)
         clock.tick(10)
         s.move()
-        redrawWindow(win)
+        redrawwindow(win)
 
     if s.body[0] == Snake.pos:
         s.addCube()
         snack = Cube(randomSnack(rows, s), color=(0, 255, 0))
 
     for x in range(len(s.body)):
-        if s.body[x].pos in list(map(lamda z:z.pos, s.body[x + 1:])):
-        print('Score: ', len(s.body))
-        message_box('Game Over!', 'Play again...')
-        s.reset((10, 10))
-        break
+        if s.body[x].pos in list(map(lambda z:z.pos, s.body[x+1:])):
+            print('Score: ', len(s.body))
+            message_box('Game Over!', 'Play again...')
+            s.reset((10, 10))
+            break
 
 
 main()
