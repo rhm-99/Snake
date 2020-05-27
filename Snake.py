@@ -3,12 +3,13 @@
 import random
 import tkinter as tk
 from tkinter import messagebox
+
 import pygame
 
 
 class Cube(object):
     rows = 20
-    w = 400
+    w = 500
 
     def __init__(self, start, dirnx=1, dirny=0, color=(255, 0, 0)):
         self.pos = start
@@ -31,10 +32,10 @@ class Cube(object):
         if eyes:
             centre = dis // 2
             radius = 3
-            circleMiddle = (i*dis+centre-radius, j*dis+8)
-            circleMiddle2 = (i*dis + dis - radius*2, j*dis+8)
-            pygame.draw.circle(surface, (0, 0, 0), circleMiddle, radius)
-            pygame.draw.circle(surface, (0, 0, 0), circleMiddle2, radius)
+            circlemiddle = (i * dis + centre - radius, j * dis + 8)
+            circlemiddle2 = (i * dis + dis - radius * 2, j * dis + 8)
+            pygame.draw.circle(surface, (0, 0, 0), circlemiddle, radius)
+            pygame.draw.circle(surface, (0, 0, 0), circlemiddle2, radius)
 
 
 class Snake(object):
@@ -53,7 +54,7 @@ class Snake(object):
             if event.type == pygame.QUIT:
                 pygame.quit()
             keys = pygame.key.get_pressed()
-            for key in keys:
+            for _ in keys:
                 if keys[pygame.K_LEFT]:
                     self.dirnx = -1
                     self.dirny = 0
@@ -106,16 +107,16 @@ class Snake(object):
         dx, dy = tail.dirnx, tail.dirny
 
         if dx == 1 and dy == 0:
-            self.body.append(Cube((tail.pos[0]-1, tail.pos[1])))
+            self.body.append(Cube((tail.pos[0] - 1, tail.pos[1])))
         elif dx == -1 and dy == 0:
-            self.body.append(Cube((tail.pos[0]+1, tail.pos[1])))
+            self.body.append(Cube((tail.pos[0] + 1, tail.pos[1])))
         elif dx == 0 and dy == 1:
-            self.body.append(Cube((tail.pos[0], tail.pos[1]-1)))
+            self.body.append(Cube((tail.pos[0], tail.pos[1] - 1)))
         elif dx == 0 and dy == -1:
-            self.body.append(Cube((tail.pos[0], tail.pos[1]+1)))
+            self.body.append(Cube((tail.pos[0], tail.pos[1] + 1)))
 
         self.body[-1].dirnx = dx
-        self.body[-1].dirn = dy
+        self.body[-1].dirny = dy
 
     def draw(self, surface):
         for i, c in enumerate(self.body):
@@ -146,7 +147,7 @@ def redrawwindow(surface):
     pygame.display.update()
 
 
-def randomSnack(rows, item):
+def randomsnack(rows, item):
     positions = item.body
     while True:
         x = random.randrange(rows)
@@ -178,7 +179,7 @@ def main():
     win = pygame.display.set_mode((width, width))
 
     s = Snake((255, 0, 0), (10, 10))
-    snack = Cube(randomSnack(rows, s), color=(0, 255, 0))
+    snack = Cube(randomsnack(rows, s), color=(0, 255, 0))
 
     flag = True
     clock = pygame.time.Clock()
@@ -190,11 +191,11 @@ def main():
         redrawwindow(win)
 
     if s.body[0] == Snake.pos:
-        s.addCube()
-        snack = Cube(randomSnack(rows, s), color=(0, 255, 0))
+        s.addcube()
+        snack = Cube(randomsnack(rows, s), color=(0, 255, 0))
 
     for x in range(len(s.body)):
-        if s.body[x].pos in list(map(lambda z:z.pos, s.body[x+1:])):
+        if s.body[x].pos in list(map(lambda z: z.pos, s.body[x + 1:])):
             print('Score: ', len(s.body))
             message_box('Game Over!', 'Play again...')
             s.reset((10, 10))
