@@ -5,11 +5,12 @@ import tkinter as tk
 from tkinter import messagebox
 
 import pygame
+pygame.init()
 
 
 class Cube(object):
     rows = 20
-    w = 500
+    w = 400
 
     def __init__(self, start, dirnx=1, dirny=0, color=(255, 0, 0)):
         self.pos = start
@@ -53,7 +54,9 @@ class Snake(object):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
+
             keys = pygame.key.get_pressed()
+
             for _ in keys:
                 if keys[pygame.K_LEFT]:
                     self.dirnx = -1
@@ -201,5 +204,7 @@ def main():
             s.reset((10, 10))
             break
 
+
+pygame.init()
 
 main()
