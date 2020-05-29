@@ -13,7 +13,7 @@ class Cube(object):
     rows = 20
     w = 400
 
-    def __init__(self, start, dirnx=1, dirny=0, color=(255, 0, 0)):
+    def __init__(self, start, dirnx=1, dirny=0, color=(255, 255, 255)):
         self.pos = start
         self.dirnx = 1
         self.dirny = 0

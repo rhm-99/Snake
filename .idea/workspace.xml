@@ -20,9 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbfc43f0-85d6-406b-ab41-c9e7cfa2f82d" name="Default Changelist" comment="commit">
-      <change beforePath="$PROJECT_DIR$/.idea/Snake.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Snake.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake.py" beforeDir="false" afterPath="$PROJECT_DIR$/Snake.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +104,8 @@
       <workItem from="1590179495501" duration="12978000" />
       <workItem from="1590492805556" duration="126000" />
       <workItem from="1590596967453" duration="708000" />
-      <workItem from="1590609091479" duration="16476000" />
+      <workItem from="1590609091479" duration="16557000" />
+      <workItem from="1590776942641" duration="1523000" />
     </task>
     <task id="LOCAL-00001" summary="First edit of game">
       <created>1589661364808</created>
@@ -233,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590760592365</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="commit">
+      <created>1590776852945</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1590776852945</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,26 +273,26 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1589650431216" />
-    <state x="411" y="136" key="FileChooserDialogImpl" timestamp="1590776780078">
+    <state x="411" y="136" key="FileChooserDialogImpl" timestamp="1590777982610">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="411" y="136" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1590776780078" />
-    <state width="1237" height="116" key="GridCell.Tab.0.bottom" timestamp="1590772909710">
+    <state x="411" y="136" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1590777982610" />
+    <state width="1237" height="116" key="GridCell.Tab.0.bottom" timestamp="1590778230522">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="116" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590772909710" />
-    <state width="1237" height="116" key="GridCell.Tab.0.center" timestamp="1590772909710">
+    <state width="1237" height="116" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590778230522" />
+    <state width="1237" height="116" key="GridCell.Tab.0.center" timestamp="1590778230522">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="116" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1590772909710" />
-    <state width="1237" height="116" key="GridCell.Tab.0.left" timestamp="1590772909710">
+    <state width="1237" height="116" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1590778230522" />
+    <state width="1237" height="116" key="GridCell.Tab.0.left" timestamp="1590778230521">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="116" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1590772909710" />
-    <state width="1237" height="116" key="GridCell.Tab.0.right" timestamp="1590772909710">
+    <state width="1237" height="116" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1590778230521" />
+    <state width="1237" height="116" key="GridCell.Tab.0.right" timestamp="1590778230522">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="116" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1590772909710" />
+    <state width="1237" height="116" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1590778230522" />
     <state width="1237" height="203" key="GridCell.Tab.1.bottom" timestamp="1590602541249">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -302,10 +309,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1237" height="203" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1590602541249" />
-    <state x="142" y="0" key="SettingsEditor" timestamp="1590776805922">
+    <state x="142" y="0" key="SettingsEditor" timestamp="1590777996125">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1590776805922" />
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1590777996125" />
     <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1590760609584">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -328,6 +335,6 @@
     <state x="421" y="177" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1590750135358" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Snake$Snake.coverage" NAME="Snake Coverage Results" MODIFIED="1590772909651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Snake$Snake.coverage" NAME="Snake Coverage Results" MODIFIED="1590778230503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
