@@ -105,7 +105,8 @@
       <workItem from="1590492805556" duration="126000" />
       <workItem from="1590596967453" duration="708000" />
       <workItem from="1590609091479" duration="16557000" />
-      <workItem from="1590776942641" duration="1523000" />
+      <workItem from="1590776942641" duration="2245000" />
+      <workItem from="1590837670883" duration="661000" />
     </task>
     <task id="LOCAL-00001" summary="First edit of game">
       <created>1589661364808</created>
@@ -240,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590776852945</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="commit">
+      <created>1590788099046</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1590788099047</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,22 +285,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="411" y="136" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1590777982610" />
-    <state width="1237" height="116" key="GridCell.Tab.0.bottom" timestamp="1590778230522">
+    <state width="1237" height="116" key="GridCell.Tab.0.bottom" timestamp="1590788209315">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="116" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590778230522" />
-    <state width="1237" height="116" key="GridCell.Tab.0.center" timestamp="1590778230522">
+    <state width="1237" height="116" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590788209315" />
+    <state width="1237" height="116" key="GridCell.Tab.0.center" timestamp="1590788209315">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="116" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1590778230522" />
-    <state width="1237" height="116" key="GridCell.Tab.0.left" timestamp="1590778230521">
+    <state width="1237" height="116" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1590788209315" />
+    <state width="1237" height="116" key="GridCell.Tab.0.left" timestamp="1590788209315">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="116" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1590778230521" />
-    <state width="1237" height="116" key="GridCell.Tab.0.right" timestamp="1590778230522">
+    <state width="1237" height="116" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1590788209315" />
+    <state width="1237" height="116" key="GridCell.Tab.0.right" timestamp="1590788209315">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="116" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1590778230522" />
+    <state width="1237" height="116" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1590788209315" />
     <state width="1237" height="203" key="GridCell.Tab.1.bottom" timestamp="1590602541249">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -313,10 +321,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1590777996125" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1590760609584">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1590788118682">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1590760609584" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1590788118682" />
     <state x="129" y="258" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589714528726">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -335,6 +343,6 @@
     <state x="421" y="177" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1590750135358" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Snake$Snake.coverage" NAME="Snake Coverage Results" MODIFIED="1590778230503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Snake$Snake.coverage" NAME="Snake Coverage Results" MODIFIED="1590838401263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

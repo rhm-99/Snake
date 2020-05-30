@@ -131,24 +131,11 @@ class Snake(object):
                 c.draw(surface)
 
 
-def drawgrid(w, rows, surface):
-    sizebtwn = width // rows
-    x = 0
-    y = 0
-    for l in range(rows):
-        x = x + sizebtwn
-        y = y + sizebtwn
-
-        pygame.draw.line(surface, (255, 255, 255), (x, 0), (x, w))
-        pygame.draw.line(surface, (255, 255, 255), (0, y), (w, y))
-
-
 def redrawwindow(surface):
     global rows, width, s, snack
     surface.fill((0, 0, 0))
     s.draw(surface)
     snack.draw(surface)
-    drawgrid(width, rows, surface)
     pygame.display.update()
 
 
@@ -183,7 +170,7 @@ def main():
 
     win = pygame.display.set_mode((width, width))
 
-    s = Snake((255, 0, 0), (10, 10))
+    s = Snake((255, 255, 255), (10, 10))
     snack = Cube(randomsnack(rows, s), color=(0, 255, 0))
 
     flag = True
@@ -197,7 +184,7 @@ def main():
 
     if s.body[0] == Snake.pos:
         s.addcube()
-        snack = Cube(randomsnack(rows, s), color=(0, 255, 0))
+        snack = Cube(randomsnack(rows, s), color=(255, 255, 255))
 
     for x in range(len(s.body)):
         if s.body[x].pos in list(map(lambda z: z.pos, s.body[x + 1:])):
@@ -206,7 +193,5 @@ def main():
             s.reset((10, 10))
             break
 
-
-pygame.init()
 
 main()
